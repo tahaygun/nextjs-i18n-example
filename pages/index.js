@@ -1,9 +1,11 @@
-import Link from 'next/link'
-import { useRouter } from 'next/router'
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import { getText } from '../locales/lang';
 
 export default function IndexPage(props) {
-  const router = useRouter()
-  const { locale, locales, defaultLocale } = router
+  const router = useRouter();
+  const { locale, locales, defaultLocale } = router;
+  const t = getText('common', locale);
 
   return (
     <div>
@@ -12,20 +14,21 @@ export default function IndexPage(props) {
       <p>Default locale: {defaultLocale}</p>
       <p>Configured locales: {JSON.stringify(locales)}</p>
 
-      <Link href="/gsp">
+      <h1>{t('Title Text')} </h1>
+      <Link href='/gsp'>
         <a>To getStaticProps page</a>
       </Link>
       <br />
 
-      <Link href="/gsp/first">
+      <Link href='/gsp/first'>
         <a>To dynamic getStaticProps page</a>
       </Link>
       <br />
 
-      <Link href="/gssp">
+      <Link href='/gssp'>
         <a>To getServerSideProps page</a>
       </Link>
       <br />
     </div>
-  )
+  );
 }
