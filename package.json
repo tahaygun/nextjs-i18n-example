@@ -9,6 +9,7 @@
   "dependencies": {
     "express": "^4.17.1",
     "next": "latest",
+    "next-i18next": "^7.0.1",
     "react": "^16.7.0",
     "react-dom": "^16.7.0"
   },
